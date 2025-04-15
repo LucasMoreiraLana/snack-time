@@ -16,7 +16,7 @@ public class PostCreatePratoController {
     private PratosService pratosService;
 
     @PostMapping
-    public void createPrato(@RequestBody CreatePratosDto createPratoDto){
+    public void createPrato(@RequestBody PostCreatePratoRequest createPratoDto){
        
         pratosService.createPrato(createPratoDto);
     }

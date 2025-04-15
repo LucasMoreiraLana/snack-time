@@ -1,35 +1,38 @@
 package com.lucas.snacktime.service;
 
 
-import com.lucas.snacktime.controller.CreateUsuarioDto;
+import com.lucas.snacktime.controller.PostCreateUserRequest;
 
 import com.lucas.snacktime.model.Usuario;
 import com.lucas.snacktime.repository.UsuarioRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.convert.EntityReader;
 import org.springframework.stereotype.Service;
 
 import java.util.UUID;
 
 @Service
-public class UsuarioService {
+@RequiredArgsConstructor
+public class CreateUsuarioService {
 
     @Autowired
     private UsuarioRepository usuarioRepository;
-    @Autowired
-    private EntityReader entityReader;
 
-    public void createUsuario(CreateUsuarioDto createUsuarioDto){
+
+
+    public void createUsuario(PostCreateUserRequest postCreateUserRequest){
 
         var entity = new Usuario(
                 UUID.randomUUID().toString(),
-                createUsuarioDto.email(),
-                createUsuarioDto.senha(),
-                createUsuarioDto.turno()
+                postCreateUserRequest.email(),
+                postCreateUserRequest.senha(),
+                postCreateUserRequest.turno()
         );
 
         usuarioRepository.save(entity);
     }
+
+
 
 
 }

@@ -4,6 +4,8 @@ import com.lucas.snacktime.model.Prato;
 import com.lucas.snacktime.model.Usuario;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-public interface UsuarioRepository extends MongoRepository<Usuario, String> {
+import java.util.Optional;
 
+public interface UsuarioRepository extends MongoRepository<Usuario, String> {
+    Optional<Usuario> findByEmail(String email);
 }
