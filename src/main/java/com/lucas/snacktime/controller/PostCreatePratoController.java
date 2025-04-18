@@ -1,7 +1,7 @@
 package com.lucas.snacktime.controller;
 
 
-import com.lucas.snacktime.service.PratosService;
+import com.lucas.snacktime.service.CreatePratoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,12 +13,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class PostCreatePratoController {
 
     @Autowired
-    private PratosService pratosService;
+    private CreatePratoService createPratoService;
 
     @PostMapping
     public void createPrato(@RequestBody PostCreatePratoRequest createPratoDto){
        
-        pratosService.createPrato(createPratoDto);
+        createPratoService.createPrato(createPratoDto);
     }
 
 }

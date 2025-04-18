@@ -21,7 +21,7 @@ public class LoginService {
         if (usuario == null) {
             return false;
         }
-        System.out.println(usuario.getEmail() + " " +usuario.getSenha());
+
         return usuario.getSenha().equals(postLoginRequest.senha());
 
     }

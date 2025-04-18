@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.UUID;
 
 @Service
-public class PratosService {
+public class CreatePratoService {
 
     @Autowired
     private PratoRepository pratoRepository;
